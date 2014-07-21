@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    fontMessage.loadFont("Replica Regular.otf",13);
+	fontMessage.loadFont("Replica Regular.otf",13);
 	ofBackground(50,50,50);
 }
 
@@ -46,53 +46,53 @@ void ofApp::mouseDragged(int x, int y, int button){
 void ofApp::mousePressed(int x, int y, int button){
 	//mousePoint.x = x;
 	//mousePoint.y = y;
-    int targetIdx = -1;
-    long currentDistance = -1;
-    long long leastDistance = LONG_LONG_MAX;
-    switch(button) {
-        case 0:
-            sprintf(eventMessage,"left mouse pressed at (%d, %d)",x,y);
-            circlePosition.push_back(ofPoint(x,y));
-            radius.push_back(30 + (x + y) % 40);
-            break;
-        case 1:
-            sprintf(eventMessage,"middle mouse pressed at (%d, %d)",x,y);
-            break;
-        case 2:
-            sprintf(eventMessage,"right mouse pressed at (%d, %d)",x,y);
-            if (circlePosition.empty()) {
-                sprintf(eventMessage,"list is empty!");
-                break;
-            }
-            
-            for (int idx = circlePosition.size() - 1; idx >= 0; --idx) {
-                currentDistance = (circlePosition[idx].x - x) * (circlePosition[idx].x - x)
-                        + (circlePosition[idx].y - y) * (circlePosition[idx].y - y);
-                
-                if (currentDistance > radius[idx] * radius[idx]) {
-                    continue;
-                }
-                
-                if (currentDistance < leastDistance) {
-                    leastDistance = currentDistance;
-                    targetIdx = idx;
-                }
-                cout << idx << " " << targetIdx << " " << currentDistance << " " << leastDistance << endl;
-            }
-            
-            
-            if (targetIdx == -1 || currentDistance == -1) {
-                break;
-            }
-            
-            circlePosition.erase(circlePosition.begin() + targetIdx);
-            radius.erase(radius.begin() + targetIdx);
-            break;
-        default:
-            sprintf(eventMessage,"mouse pressed at (%d, %d)",x,y);
-            break;
-    }
-    
+	int targetIdx = -1;
+	long currentDistance = -1;
+	long long leastDistance = LONG_LONG_MAX;
+	switch(button) {
+		case 0:
+			sprintf(eventMessage,"left mouse pressed at (%d, %d)",x,y);
+			circlePosition.push_back(ofPoint(x,y));
+			radius.push_back(30 + (x + y) % 40);
+			break;
+		case 1:
+			sprintf(eventMessage,"middle mouse pressed at (%d, %d)",x,y);
+			break;
+		case 2:
+			sprintf(eventMessage,"right mouse pressed at (%d, %d)",x,y);
+			if (circlePosition.empty()) {
+				sprintf(eventMessage,"list is empty!");
+				break;
+			}
+
+			for (int idx = circlePosition.size() - 1; idx >= 0; --idx) {
+				currentDistance = (circlePosition[idx].x - x) * (circlePosition[idx].x - x)
+					+ (circlePosition[idx].y - y) * (circlePosition[idx].y - y);
+
+				if (currentDistance > radius[idx] * radius[idx]) {
+					continue;
+				}
+
+				if (currentDistance < leastDistance) {
+					leastDistance = currentDistance;
+					targetIdx = idx;
+				}
+				cout << idx << " " << targetIdx << " " << currentDistance << " " << leastDistance << endl;
+			}
+
+
+			if (targetIdx == -1 || currentDistance == -1) {
+				break;
+			}
+
+			circlePosition.erase(circlePosition.begin() + targetIdx);
+			radius.erase(radius.begin() + targetIdx);
+			break;
+		default:
+			sprintf(eventMessage,"mouse pressed at (%d, %d)",x,y);
+			break;
+	}
+
 }
 
 //--------------------------------------------------------------

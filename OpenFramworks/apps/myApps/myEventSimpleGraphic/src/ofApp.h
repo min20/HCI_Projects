@@ -18,10 +18,10 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-		
-        ofTrueTypeFont fontMessage;
-        char eventMessage[255];
+
+		ofTrueTypeFont fontMessage;
+		char eventMessage[255];
 		//ofPoint mousePoint;
 		vector<ofPoint> circlePosition;
-        vector<int> radius;
+		vector<int> radius;
 };
