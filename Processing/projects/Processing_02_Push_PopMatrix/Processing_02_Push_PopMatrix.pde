@@ -9,9 +9,6 @@ void setup() {
 void draw() {
   background(50);
   pushMatrix();
-    translate(100, 100);
-    fill(255, 0, 0, 100);
-    rect(250, 250, 200, 200);
     pushMatrix();
       fill(0, 255, 0, 100);
       translate(mouseX - WIDTH / 2, 100);
@@ -28,6 +25,9 @@ void draw() {
         popMatrix();
       popMatrix();
     popMatrix();
+    translate(100, 100);
+    fill(255, 0, 0, 100);
+    rect(250, 250, 200, 200);
   popMatrix();
 
   ROT_AMT += 0.01;
