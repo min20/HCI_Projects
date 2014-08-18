@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-Ball::Ball(std::array<Ball*, BALL_NUMBER>* ballList, unsigned int idx, float x, float y)
+Ball::Ball(std::tr1::array<Ball*, BALL_NUMBER>* ballList, unsigned int idx, float x, float y)
 {
 	// tuio에서 받은 x, y값은 화면에 대한 백분율값이므로 
 	// 화면 크기만큼을 곱해서 해당하는 위치의 픽셀값을 구함

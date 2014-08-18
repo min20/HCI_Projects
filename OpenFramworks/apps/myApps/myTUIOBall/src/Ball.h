@@ -1,13 +1,13 @@
 #pragma once
 #include "config.h"
-#include "array"
+#include "tr1/array"
 
 class Ball
 {
 public:
 	// ball들을 관리하기 위한 list와 해당 ball의 idx를 인자에 넣은 이유는 충돌체크가 필요한 경우 활용하기 위해
 	// x, y값은 생성되는 ball이 화면에 터치된 지점에서 생성되게 하기 위해서 입력
-	Ball(std::array<Ball*, BALL_NUMBER>* ballList, unsigned int idx, float x, float y);
+	Ball(std::tr1::array<Ball*, BALL_NUMBER>* ballList, unsigned int idx, float x, float y);
 	~Ball(void);
 
 	// ball의 크기와 색 변화를 위한 flag 설정
@@ -50,7 +50,7 @@ private:
 
 	ofVec3f m_Velocity;
 
-	std::array<Ball*, BALL_NUMBER>* m_BallList;
-	std::array<ofColor, COLOR_NUMBER> m_colorList;
+	std::tr1::array<Ball*, BALL_NUMBER>* m_BallList;
+	std::tr1::array<ofColor, COLOR_NUMBER> m_colorList;
 };
 

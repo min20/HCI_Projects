@@ -1,4 +1,5 @@
-#include "ImageExample/ImageExample.h"
+#include "ImageExample.h"
+#define nullptr NULL
 
 //--------------------------------------------------------------
 void ImageExample::setup(){
@@ -17,8 +18,8 @@ void ImageExample::setup(){
 
 	m_ImgPositionX = 100.0;
 	m_ImgPositionY = 100.0;
-	m_ImgWidth = 200.0;
-	m_ImgHeight = 200.0;
+	m_ImgWidth = m_MyImage.getWidth();
+	m_ImgHeight = m_MyImage.getHeight();
 	m_ImgRotateAngle = 120.0;
 }
 
