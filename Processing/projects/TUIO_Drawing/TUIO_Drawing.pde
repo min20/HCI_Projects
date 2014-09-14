@@ -67,8 +67,7 @@ void draw() {
 	fill(colorBoxRed.getColorIntensity(),
 			colorBoxGreen.getColorIntensity(),
 			colorBoxBlue.getColorIntensity());
-	stroke(255);
-	strokeWeight(2);
+	stroke(255, 255, 255);
 	rect(width - 50, 0, 50, 50);
 }
 
@@ -112,9 +111,8 @@ class colorBox {
 			if (width * tuioCursor.getX() < boxWidth
 					&& height * tuioCursor.getY() > boxPosition
 					&& height * tuioCursor.getY() < boxPosition + boxHeight) {
-				colorIntensity = int(height * tuioCursor.getY());
-				colorIntensity -= boxPosition;
-				colorIntensity *= 255 / boxHeight;
+				colorIntensity = (int(height * tuioCursor.getY()) - boxPosition);
+				colorIntensity = colorIntensity * 255 / boxHeight;
 			}
 		}
 
@@ -143,9 +141,9 @@ class colorBox {
 			line(0, idx_bar + boxPosition, boxWidth, idx_bar + boxPosition);
 		}
 
-		stroke(255);
-		line(0, colorIntensity * boxHeight / 255 + boxPosition, boxWidth, colorIntensity * boxHeight / 255 + boxPosition);
-		System.out.println(colorIntensity);
+		stroke(255, 255, 255);
+		line(0, colorIntensity * boxHeight / 254 + boxPosition, boxWidth, colorIntensity * boxHeight / 254 + boxPosition);
+		System.out.println(colorIntensity + ", " + boxHeight + ", " + boxPosition);
 	}
 }
 
