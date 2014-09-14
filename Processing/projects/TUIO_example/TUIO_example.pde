@@ -27,7 +27,7 @@ TuioProcessing tuioClient;
 
 // window size
 int WINDOW_WIDTH = 1280;
-int WINDOW_HEIGHT = 960;
+int WINDOW_HEIGHT = 720;
 
 // these are some helper variables which are used
 // to create scalable graphical feedback
